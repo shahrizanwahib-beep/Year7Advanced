@@ -96,9 +96,17 @@
             display: flex; flex-direction: column;
         }
         .objective-badge {
-            position: absolute; top: -10px; left: -10px;
-            padding: 4px 12px; border-radius: 12px;
-            font-size: 1rem; font-weight: 600; color: white; z-index: 10;
+            position: absolute;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%); /* Center the badge */
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
          .bg-bubbles { background-color: #ecfccb; background-image: radial-gradient(circle at 100% 100%, #d9f99d 0, #ecfccb 40%), radial-gradient(circle at 0% 0%, #bef264 0, #ecfccb 50%); }
         .bg-stripes { background-color: #fce7f3; background-image: repeating-linear-gradient( -45deg, #fbcfe8, #fbcfe8 10px, #fce7f3 10px, #fce7f3 20px ); }
@@ -108,14 +116,22 @@
         .choice-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
         .bg-geometric { background-color: #f8fafc; background-image: linear-gradient(135deg, #f1f5f9 25%, transparent 25%), linear-gradient(225deg, #f1f5f9 25%, transparent 25%), linear-gradient(45deg, #f1f5f9 25%, transparent 25%), linear-gradient(315deg, #f1f5f9 25%, #f8fafc 25%); background-size: 40px 40px; background-position: 0 0, 20px 20px, 20px 20px, 0 0; }
         .bg-subtle-waves { background-color: #f0f9ff; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23bae6fd' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .bg-gradient-sky {
+            background-image: radial-gradient(at 0% 0%, rgb(219, 234, 254) 0px, transparent 50%), radial-gradient(at 98% 1%, rgb(224, 231, 255) 0px, transparent 50%);
+            background-color: rgb(250, 252, 255);
+        }
+        .bg-gradient-mint {
+            background-color: #f0fdfa;
+            background-image: radial-gradient(at 0% 100%, hsla(167,76%,88%,1) 0px, transparent 50%), radial-gradient(at 98% 0%, hsla(180,100%,94%,1) 0px, transparent 50%);
+        }
 
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Halaman Indeks Year 7 -->
-    <div id="year7-page" class="page active flex-col items-center justify-center p-6">
-        <div class="text-center fade-in">
+    <div id="year7-page" class="page active flex-col items-center p-6">
+        <div class="text-center fade-in pt-10">
             <div class="w-24 h-24 mx-auto bg-blue-500 rounded-full flex items-center justify-center shadow-lg mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.25278C12 6.25278 10.8333 4 8 4C5.16667 4 3 6.16667 3 9C3 14 8 19 12 21C16 19 21 14 21 9C21 6.16667 18.8333 4 16 4C13.1667 4 12 6.25278 12 6.25278Z" />
@@ -126,7 +142,7 @@
             <p class="text-gray-600 mt-6 text-xl font-medium">Dibawakan oleh: <span class="font-bold text-blue-600">Cikgu Shahrizan</span></p>
         </div>
         
-        <div class="mt-10 w-full max-w-lg space-y-5">
+        <div class="mt-10 w-full max-w-lg space-y-5 pb-10">
             <button data-target="introduction-page" class="hub-card fade-in w-full text-left p-5 bg-white rounded-xl shadow-md flex items-center space-x-4" style="animation-delay: 0.1s;">
                 <div class="flex-shrink-0 h-14 w-14 rounded-lg flex items-center justify-center bg-orange-100 text-orange-600">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -163,6 +179,17 @@
                     <p class="font-bold text-gray-800 text-xl font-poppins">Slaid: Menulis Karangan</p>
                 </div>
             </button>
+             <button data-target="bertutur-page" class="hub-card fade-in w-full text-left p-5 bg-white rounded-xl shadow-md flex items-center space-x-4" style="animation-delay: 0.5s;">
+                 <div class="flex-shrink-0 h-14 w-14 rounded-lg flex items-center justify-center bg-cyan-100 text-cyan-600">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                     </svg>
+                </div>
+                <div>
+                    <span class="text-sm font-semibold text-cyan-500">Topik 4</span>
+                    <p class="font-bold text-gray-800 text-xl font-poppins">Slaid: Kemahiran Bertutur</p>
+                </div>
+            </button>
         </div>
     </div>
 
@@ -171,6 +198,7 @@
     <div id="kata-nama-slides-page" class="page flex-col items-center justify-center p-4 bg-gray-100"></div>
     <div id="pengenalan-diri-page" class="page"></div>
     <div id="karangan-hari-keluarga-page" class="page"></div>
+    <div id="bertutur-page" class="page"></div>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
@@ -179,6 +207,11 @@
         const pages = document.querySelectorAll('.page');
         window.showPage = (pageId) => {
             pages.forEach(page => page.classList.toggle('active', page.id === pageId));
+            if(pageId === 'year7-page') {
+                document.body.style.overflow = 'auto';
+            } else {
+                document.body.style.overflow = 'hidden';
+            }
             if (window.initTools && window.initTools[pageId] && !document.getElementById(pageId).dataset.initialized) {
                 window.initTools[pageId]();
                 document.getElementById(pageId).dataset.initialized = 'true';
@@ -542,7 +575,91 @@
             });
             showSlide(currentSlide);
         };
-        
+
+        window.initTools['bertutur-page'] = () => {
+            const container = document.getElementById('bertutur-page');
+            container.classList.add('flex-col', 'items-center', 'justify-center', 'poppins-font');
+            container.innerHTML = `
+                <div class="w-full h-full flex flex-col items-center justify-center bg-gray-900">
+                    <div class="presentation-container bg-white overflow-hidden rounded-xl shadow-2xl">
+                        <div id="presentation-view-bt" class="flex-grow p-8 md:p-16 flex items-center justify-center overflow-y-auto transition-colors duration-500 relative" style="zoom: 1.1;">
+                            <!-- Slides will be dynamically inserted here -->
+                        </div>
+                        <div class="bg-gray-100 border-t-2 border-gray-200 px-8 py-4 flex items-center justify-between flex-shrink-0">
+                            <button id="prev-btn-bt" class="px-6 py-3 bg-gray-300 text-gray-800 text-lg font-semibold rounded-lg shadow-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+                                Sebelum
+                            </button>
+                            <div class="flex items-center gap-x-6">
+                                <div id="slide-counter-bt" class="text-lg font-bold text-gray-600"></div>
+                                <button id="fullscreen-btn-bt" title="Skrin Penuh (F)" class="text-gray-500 hover:text-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-md p-1">
+                                    <svg id="icon-enter-fs-bt" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
+                                    </svg>
+                                    <svg id="icon-exit-fs-bt" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 14h6v6m-6-6l7-7m3 0h6v6m-6-6l7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <button id="next-btn-bt" class="px-6 py-3 bg-cyan-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+                                Seterusnya
+                            </button>
+                        </div>
+                    </div>
+                     <div class="flex-shrink-0 p-4 text-center">
+                        <button data-target="year7-page" class="bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg hover:bg-gray-300 shadow-md transition-all">
+                            Kembali ke Indeks
+                        </button>
+                    </div>
+                </div>
+            `;
+            const slides = [ { title: "Topik Utama", objective: "Pengenalan Topik", content: `<div class="w-full text-center pt-12"> <h2 class="text-6xl font-bold text-gray-800 mb-4">Kemahiran Bertutur</h2> <p class="text-4xl text-cyan-600 font-semibold">Bercerita Tentang Diri, Keluarga & Orang Sekeliling</p> <div class="mt-8 bg-cyan-50 p-4 rounded-lg max-w-3xl mx-auto"> <h3 class="text-2xl font-bold text-cyan-800">Aktiviti Do Now 🧠</h3> <p class="text-xl text-cyan-700 mt-2">Apakah satu kenangan paling manis bersama keluarga anda? Fikirkan cara untuk menceritakannya dalam 3 ayat.</p> </div> </div>` }, { title: "Objektif Pembelajaran", objective: "Matlamat Pembelajaran", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800 mb-8">Apa yang akan kita kuasai?</h2><div class="text-left max-w-4xl mx-auto text-2xl space-y-4"><div><span class="bg-blue-500 text-white font-semibold rounded-lg px-3 py-1 mr-3">1.</span> Memperkenalkan diri dan keluarga dengan ayat yang lengkap dan sopan.</div><div><span class="bg-green-500 text-white font-semibold rounded-lg px-3 py-1 mr-3">2.</span> Menceritakan pengalaman berkaitan keluarga dengan sebutan dan intonasi yang jelas.</div><div><span class="bg-yellow-500 text-white font-semibold rounded-lg px-3 py-1 mr-3">3.</span> Menggunakan bahasa badan yang sesuai untuk menyampaikan perasaan ketika bercerita.</div></div></div>` }, { title: "Kenapa Kemahiran Ini Penting?", objective: "Memahami Konteks & Kepentingan", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Kenapa Ia Penting?</h2><p class="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">Kemahiran bercerita membantu kita dalam banyak situasi.</p><div class="mt-8 grid grid-cols-3 gap-8 max-w-5xl mx-auto text-center"><div class="bg-red-50 p-6 rounded-xl"><h3 class="text-3xl font-bold text-red-700">Membina Hubungan</h3><p class="mt-2 text-xl">Mudah untuk mendapat kawan baharu.</p></div><div class="bg-blue-50 p-6 rounded-xl"><h3 class="text-3xl font-bold text-blue-700">Pembentangan</h3><p class="mt-2 text-xl">Menyampaikan idea dengan lebih yakin di kelas.</p></div><div class="bg-green-50 p-6 rounded-xl"><h3 class="text-3xl font-bold text-green-700">Temu Duga</h3><p class="mt-2 text-xl">Memberi tanggapan pertama yang baik pada masa hadapan.</p></div></div></div>` }, { title: "Struktur Penceritaan Diri", objective: "Mempelajari struktur pengenalan diri", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Struktur Asas Penceritaan Diri</h2><p class="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">Gunakan rangka ini untuk memperkenalkan diri anda dengan lengkap.</p><div class="mt-8 grid grid-cols-2 gap-6 max-w-4xl mx-auto text-2xl"><div class="bg-gray-100 p-6 rounded-lg"><strong>1. Salam & Nama:</strong> Mulakan dengan ucapan salam dan sebut nama penuh.</div><div class="bg-gray-100 p-6 rounded-lg"><strong>2. Maklumat Asas:</strong> Umur dan tempat tinggal.</div><div class="bg-gray-100 p-6 rounded-lg"><strong>3. Hobi & Minat:</strong> Apa yang anda suka lakukan.</div><div class="bg-gray-100 p-6 rounded-lg"><strong>4. Keluarga:</strong> Bilangan adik-beradik atau cerita ringkas.</div></div></div>` }, { title: "Contoh Memperkenalkan Diri", objective: "Melihat contoh pengenalan diri yang lengkap", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Contoh Pengenalan Diri</h2><div class="mt-6 text-left bg-blue-50 p-8 rounded-lg max-w-3xl mx-auto text-2xl leading-relaxed"><p>Assalamualaikum. Nama saya <strong>Nurul Amani binti Ahmad</strong>. Saya berumur 13 tahun dan tinggal di Taman Cempaka. Hobi saya pada masa lapang ialah membaca novel dan melukis. Saya merupakan anak sulung daripada tiga orang adik-beradik.</p></div></div>` }, { title: "Aktiviti 1: 'Kenali Saya'", objective: "Mempraktikkan pengenalan diri", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Aktiviti 1: "Kenali Saya" (5 Minit)</h2><p class="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">Secara berpasangan, perkenalkan diri anda kepada rakan semeja menggunakan struktur yang dipelajari.</p><div class="mt-6 bg-yellow-100 p-6 rounded-lg max-w-3xl mx-auto text-2xl"><p class="font-semibold">Cabaran Tambahan:</p><p class="mt-2">Tanya satu soalan tambahan kepada rakan anda untuk mengenali mereka dengan lebih baik.</p></div></div>` }, { title: "Bercerita Tentang Keluarga", objective: "Menggunakan kosa kata untuk menghurai keluarga", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Menghuraikan Ahli Keluarga</h2><p class="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">Gunakan kata adjektif yang sesuai untuk memberi gambaran yang lebih jelas.</p><div class="mt-6 text-left bg-green-50 p-6 rounded-lg max-w-3xl mx-auto text-2xl"><p><strong>Contoh:</strong></p><ul class="list-disc list-inside mt-2"><li>Ayah saya seorang yang <strong>tegas tetapi penyayang</strong>.</li><li>Ibu saya pula sangat <strong>rajin</strong> dan pandai memasak.</li><li>Adik saya sangat <strong>nakal</strong> tetapi comel.</li></ul></div></div>` }, { title: "Kuasa Intonasi (Nada Suara)", objective: "Memahami kesan intonasi dalam penceritaan", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Kuasa Intonasi</h2><p class="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">Nada suara anda menunjukkan perasaan anda ketika bercerita.</p><div class="mt-6 text-3xl font-bold text-indigo-600 italic">"Kami sekeluarga pergi ke Pulau Langkawi."</div><div class="mt-4 grid grid-cols-2 gap-4 max-w-4xl mx-auto text-xl"><div class="bg-gray-100 p-4 rounded-lg"><strong>Nada Teruja:</strong> Suara lebih tinggi dan laju.</div><div class="bg-gray-100 p-4 rounded-lg"><strong>Nada Mendatar:</strong> Suara biasa tanpa emosi.</div></div><p class="mt-4 text-lg text-gray-500">Nada yang mana lebih menarik untuk didengar?</p></div>` }, { title: "Bahasa Badan: Komunikasi Tanpa Suara", objective: "Mempelajari penggunaan bahasa badan", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Bahasa Badan Mesra</h2><p class="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">Gerak-geri anda menunjukkan anda seorang yang peramah.</p><ul class="mt-6 text-left max-w-2xl mx-auto text-2xl space-y-2 list-disc list-inside"><li><strong>Kontak Mata:</strong> Pandang rakan anda ketika bercakap.</li><li><strong>Senyuman:</strong> Menunjukkan anda gembira berkongsi cerita.</li><li><strong>Postur Tegak:</strong> Menunjukkan anda yakin dengan apa yang diceritakan.</li></ul></div>` }, { title: "Aktiviti 2: 'Cerita 1 Minit'", objective: "Menggabungkan intonasi & bahasa badan", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Aktiviti 2: "Cerita 1 Minit"</h2><p class="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">Setiap murid diberi masa 1 minit untuk bercerita tentang seorang ahli keluarga atau rakan baik.</p><div class="mt-6 bg-purple-100 p-6 rounded-lg max-w-3xl mx-auto text-2xl"><p class="font-semibold">Fokus Utama:</p><ul class="list-disc list-inside mt-2"><li>Gunakan intonasi yang sesuai dengan cerita (gembira, cemas, lucu).</li><li>Gunakan sekurang-kurangnya satu gerak tangan.</li></ul></div></div>` }, { title: "Menghormati Orang Sekeliling", objective: "Mempelajari adab semasa bercerita", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Adab Ketika Berbual</h2><p class="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">Ketika bercerita tentang orang lain, sentiasa amalkan adab yang baik.</p><ul class="mt-6 text-left max-w-3xl mx-auto text-2xl space-y-3"><li class="flex items-start"><span class="mr-3 text-green-500">✅</span> Gunakan bahasa yang sopan dan positif.</li><li class="flex items-start"><span class="mr-3 text-green-500">✅</span> Elakkan daripada membuka aib atau menceritakan keburukan orang lain.</li><li class="flex items-start"><span class="mr-3 text-red-500">❌</span> Jangan menyampuk ketika rakan sedang bercakap.</li></ul></div>` }, { title: "Aktiviti 3: 'Teka Siapa?'", objective: "Mengaplikasikan semua kemahiran", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Aktiviti 3: "Teka Siapa?"</h2><p class="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">Seorang murid akan memberikan 3 pembayang tentang seorang rakan sekelas (tanpa menyebut nama).</p><div class="mt-6 bg-yellow-100 p-6 rounded-lg max-w-3xl mx-auto text-2xl"><p class="font-semibold">Contoh Pembayang:</p><ul class="list-disc list-inside mt-2"><li>Rakan saya ini sangat pandai melukis.</li><li>Dia seorang yang kelakar.</li><li>Dia duduk di barisan hadapan.</li></ul></div><p class="mt-4 text-xl">Murid lain perlu meneka siapakah yang dimaksudkan.</p></div>` }, { title: "Kesalahan Umum Ketika Bertutur", objective: "Mengenal pasti kesilapan lazim", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Elakkan Perangkap Ini! ❌</h2><p class="mt-4 text-2xl text-gray-600">Ini adalah beberapa kesilapan yang biasa dilakukan.</p><div class="mt-6 text-left max-w-3xl mx-auto text-2xl space-y-3"><p><strong>1. Bercakap Terlalu Laju:</strong> Pendengar akan ketinggalan.</p><p><strong>2. Suara Terlalu Perlahan:</strong> Pendengar tidak dapat mendengar dengan jelas.</p><p><strong>3. Tiada Kontak Mata:</strong> Kelihatan tidak yakin atau tidak berminat.</p><p><strong>4. Menggunakan "umm", "aaa":</strong> Menunjukkan anda tidak bersedia.</p></div></div>` }, { title: "Rumusan", objective: "Pengukuhan Konsep", content: `<div class="w-full text-center pt-12"><h2 class="text-5xl font-bold text-gray-800">Rumusan Kejayaan ✨</h2><p class="mt-6 text-3xl text-gray-600">Untuk bercerita dengan hebat, ingatlah:</p><ul class="mt-4 text-2xl list-disc list-inside max-w-2xl mx-auto"><li><strong>Rancang</strong> isi cerita anda (Struktur).</li><li><strong>Sebut</strong> setiap perkataan dengan jelas.</li><li><strong>Gayakan</strong> nada suara anda mengikut perasaan.</li><li><strong>Gunakan</strong> bahasa badan untuk keyakinan!</li></ul></div>` }, { title: "Sesi Soal Jawab & Refleksi", objective: "Refleksi Pembelajaran", content: `<div class="w-full text-center pt-12"><h2 class="text-6xl font-bold text-gray-800">Soal Jawab & Refleksi</h2><p class="mt-6 text-3xl text-gray-600">Apakah satu perkara baharu yang anda pelajari hari ini tentang kemahiran bertutur?</p><p class="mt-4 text-7xl">🙋‍♀️🙋‍♂️</p></div>` } ];
+            let currentSlide = 0;
+            const presentationView = container.querySelector('#presentation-view-bt');
+            const prevBtn = container.querySelector('#prev-btn-bt');
+            const nextBtn = container.querySelector('#next-btn-bt');
+            const slideCounter = container.querySelector('#slide-counter-bt');
+            const fullscreenBtn = container.querySelector('#fullscreen-btn-bt');
+            const iconEnterFs = container.querySelector('#icon-enter-fs-bt');
+            const iconExitFs = container.querySelector('#icon-exit-fs-bt');
+            
+            function showSlide(index) {
+                const slide = slides[index];
+                const backgroundClasses = ['bg-gradient-sky', 'bg-gradient-mint'];
+                presentationView.classList.remove(...backgroundClasses);
+                presentationView.classList.add(backgroundClasses[index % 2]);
+
+                let objectiveHtml = '';
+                if (slide.objective) {
+                    let objText = slide.objective;
+                    let bgColor = 'bg-gray-500'; // Default
+                    if (objText.includes('Mempelajari') || objText.includes('Melihat') || objText.includes('Memahami')) { bgColor = 'bg-blue-500'; } 
+                    else if (objText.includes('Mempraktikkan') || objText.includes('Menggunakan') || objText.includes('Menggabungkan') || objText.includes('Mengaplikasikan')) { bgColor = 'bg-green-500'; } 
+                    else if (objText.includes('Mengenal pasti')) { bgColor = 'bg-yellow-500'; } 
+                    else if (objText.includes('Pengukuhan') || objText.includes('Refleksi')) { bgColor = 'bg-purple-500'; }
+                    objectiveHtml = `<div class="objective-badge ${bgColor}">Objektif: ${objText}</div>`;
+                }
+                presentationView.innerHTML = `<div class="slide-content">${objectiveHtml}${slide.content}</div>`;
+                slideCounter.textContent = `Slaid ${index + 1} / ${slides.length}`;
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === slides.length - 1;
+            }
+
+            function updateFullscreenIcon() { if (document.fullscreenElement) { iconEnterFs.classList.add('hidden'); iconExitFs.classList.remove('hidden'); } else { iconEnterFs.classList.remove('hidden'); iconExitFs.classList.add('hidden'); } }
+            function toggleFullScreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen().catch(err => { alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`); }); } else { if (document.exitFullscreen) { document.exitFullscreen(); } } }
+            
+            nextBtn.addEventListener('click', () => { if (currentSlide < slides.length - 1) { currentSlide++; showSlide(currentSlide); } });
+            prevBtn.addEventListener('click', () => { if (currentSlide > 0) { currentSlide--; showSlide(currentSlide); } });
+            fullscreenBtn.addEventListener('click', toggleFullScreen);
+            document.addEventListener('fullscreenchange', updateFullscreenIcon);
+            document.addEventListener('keydown', (event) => {
+                 if (container.classList.contains('active')) {
+                    if (event.key === 'ArrowRight' && !nextBtn.disabled) nextBtn.click();
+                    else if (event.key === 'ArrowLeft' && !prevBtn.disabled) prevBtn.click();
+                    else if (event.key.toLowerCase() === 'f') { toggleFullScreen(); }
+                }
+            });
+            showSlide(currentSlide);
+        };
     </script>
 </body>
 </html>
